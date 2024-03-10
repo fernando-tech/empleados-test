@@ -1,1 +1,29 @@
-<p>Home</p>
+<div class="row">
+  <div class="col-12">
+      <div class="card">
+              <div class="table-responsive">
+                  <table id="mainTable" class="table editable-table table-bordered table-striped m-b-0">
+                      <thead>
+                          <tr>
+                              <th>No. Empleado</th>
+                              <th>Nombre</th>
+                              <th>Puesto</th>
+                              <th>Jefe Inmediato</th>
+                              <th>Accion</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr *ngFor="let empleado of empleados">
+                              <td>{{empleado.id}}</td>
+                              <td>{{empleado.apellidoPaterno}} {{empleado.apellidoMaterno}} {{empleado.nombre}}</td>
+                              <td>{{empleado.puesto.nombre}}</td>
+                              <td>{{empleado.jefe.apellidoPaterno}} {{empleado.jefe.apellidoMaterno}} {{empleado.jefe.nombre}}</td>
+                              <td><button type="button"
+                                class="btn btn-info btn-sm mr-1" title="Actualizar"><i
+                                    class="fas fa-stream"></i></button></td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+      </div>
+
