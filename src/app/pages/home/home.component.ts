@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmpleadosService } from 'src/app/services/empleados.service';
 import { Empleado } from './Empleado';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,7 @@ export class HomeComponent implements OnInit {
 
   empleados: Empleado[] = [];
 
-  constructor(private empleadosService: EmpleadosService) { }
+  constructor(private empleadosService: EmpleadosService,private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getEmpleados();
