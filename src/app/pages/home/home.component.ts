@@ -34,18 +34,27 @@ export class HomeComponent implements OnInit {
   }
 
   eliminarEmpleado(idEmpleado: number){
-    this.empleadosService.eliminarEmpleado(idEmpleado).subscribe(
-      (datos) => {
-        Swal.fire('Correcto', '¡Se elimino correctamente!', 'success').then(() => {
-          // Recargar la página después de hacer clic en "Aceptar" en la alerta
-          location.reload();
-        });
-      },
-      (error) => {
-        // Manejar errores
-        console.error('Error al obtener datos:', error);
+    Swal.fire({
+      title: '¿Esta seguro?',
+      text: "El empleado sera eliminado",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, eliminar!',
+      cancelButtonText: 'No, cancelar!'
+    }).then((result) => {
+      if (result.value) {
+        this.empleadosService.eliminarEmpleado(idEmpleado).subscribe(
+          (datos) => {
+            Swal.fire('Correcto', '¡Se elimino correctamente!', 'success').then(() => {
+              // Recargar la página después de hacer clic en "Aceptar" en la alerta
+              location.reload();
+            });
+          });
       }
-    );
+    })
+
   }
 
 }
