@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
 
   empleados: Empleado[] = [];
 
-  constructor(private empleadosService: EmpleadosService,private activatedRoute: ActivatedRoute) { }
+  constructor(private empleadosService: EmpleadosService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getEmpleados();
@@ -24,7 +24,6 @@ export class HomeComponent implements OnInit {
       (datos) => {
         // Manejar los datos recibidos
         this.empleados = datos;
-        console.log(this.empleados);
       },
       (error) => {
         // Manejar errores

@@ -1,4 +1,4 @@
-import { Puesto } from './Puesto';
+import { Puesto } from '../form-empleado/Puesto';
 
 export class Empleado {
     id: number;
@@ -7,6 +7,7 @@ export class Empleado {
     apellidoMaterno: string;
     puesto: Puesto;
     jefe: Empleado;
+
 
     constructor(id: number, nombre: string, apellidoPaterno: string, apellidoMaterno: string, puesto: Puesto, jefe: Empleado) {
       this.id = id;

@@ -6,6 +6,8 @@ import { HomeComponent } from './home/home.component';
 import { NotPageFoundComponent } from './not-page-found/not-page-found.component';
 import { NosotrosComponent } from './nosotros/nosotros.component';
 import { FormEmpleadoComponent } from './form-empleado/form-empleado.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 
@@ -21,11 +23,15 @@ import { FormEmpleadoComponent } from './form-empleado/form-empleado.component';
     HomeComponent,
     NotPageFoundComponent,
     NosotrosComponent,
-    FormEmpleadoComponent
+    FormEmpleadoComponent,
+    FormsModule,
+    ReactiveFormsModule
   ],
   imports: [
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class PagesModule { }

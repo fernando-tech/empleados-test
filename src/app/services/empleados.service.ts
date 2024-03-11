@@ -4,6 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { map, catchError, tap, filter } from 'rxjs/operators';
 import { formatDate } from '@angular/common';
 import { Router } from '@angular/router';
+import { RequestActEmpl } from '../pages/form-empleado/RequestActEmpl';
 
 
 @Injectable({
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class EmpleadosService {
 
-  private URL = 'http://localhost:8080';
+  private URL = 'http://localhost:8080/empleados';
   private httpHeaders = new HttpHeaders({ 'Content-type': 'application/json' });
 
   constructor(
@@ -20,7 +21,19 @@ export class EmpleadosService {
   ) { }
 
   obtenerEmpleados(): Observable<any> {
-    return this.http.get<any>(`${this.URL}/empleados`);
+    return this.http.get<any>(`${this.URL}`);
+  }
+
+  obtenerGerentes(): Observable<any> {
+    return this.http.get<any>(`${this.URL}/gerentes`);
+  }
+
+  obtenerEmpleadoById(id: string){
+    return this.http.get<any>(`${this.URL}/${id}`);
+  }
+
+  actualizarEmpelado(request: RequestActEmpl, ){
+    return this.http.put<any>(`${this.URL}`, request);
   }
 
 }
