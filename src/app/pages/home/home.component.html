@@ -25,7 +25,12 @@
                               <td>{{empleado.jefe.apellidoPaterno}} {{empleado.jefe.apellidoMaterno}} {{empleado.jefe.nombre}}</td>
                               <td><button [routerLink]="['/formulario', empleado.id]" type="button"
                                 class="btn btn-info btn-sm mr-1" title="Actualizar"><i
-                                    class="fas fa-stream"></i></button></td>
+                                    class="fas fa-stream"></i></button>
+                                    <button (click)="eliminarEmpleado(empleado.id)" type="button"
+                                    class="btn btn-danger btn-sm mr-1" title="Eliminar"><i
+                                        class="fas fa-trash"></i></button>
+                              </td>
+
                           </tr>
                       </tbody>
                   </table>

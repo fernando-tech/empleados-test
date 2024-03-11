@@ -41,4 +41,8 @@ export class EmpleadosService {
     return this.http.post<any>(`${this.URL}`, request);
   }
 
+  eliminarEmpleado(idEmpleado: number ){
+    return this.http.delete<any>(`${this.URL}/${idEmpleado}`);
+  }
+
 }
