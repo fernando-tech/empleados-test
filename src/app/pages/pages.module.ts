@@ -7,6 +7,7 @@ import { NotPageFoundComponent } from './not-page-found/not-page-found.component
 import { NosotrosComponent } from './nosotros/nosotros.component';
 import { FormEmpleadoComponent } from './form-empleado/form-empleado.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormAltaEmpleadoComponent } from './form-alta-empleado/form-alta-empleado.component';
 
 
 
@@ -17,7 +18,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     NotPageFoundComponent,
     NosotrosComponent,
-    FormEmpleadoComponent
+    FormEmpleadoComponent,
+    FormAltaEmpleadoComponent
   ],
   exports: [
     HomeComponent,

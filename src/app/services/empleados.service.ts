@@ -5,6 +5,7 @@ import { map, catchError, tap, filter } from 'rxjs/operators';
 import { formatDate } from '@angular/common';
 import { Router } from '@angular/router';
 import { RequestActEmpl } from '../pages/form-empleado/RequestActEmpl';
+import { AltaRequest } from '../pages/form-alta-empleado/AltaRequest';
 
 
 @Injectable({
@@ -34,6 +35,10 @@ export class EmpleadosService {
 
   actualizarEmpelado(request: RequestActEmpl, ){
     return this.http.put<any>(`${this.URL}`, request);
+  }
+
+  altaEmpelado(request: AltaRequest, ){
+    return this.http.post<any>(`${this.URL}`, request);
   }
 
 }
